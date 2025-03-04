@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>High Frequency Words Practice</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+    .hidden {
+      display: none;
+    }
+    label {
+      display: inline-block;
+      margin-bottom: 5px;
+    }
+  </style>
+</head>
+<body>
+  <h1>High Frequency Words Practice</h1>
+  <div id="levelInfo"></div>
+  <button id="playButton">Play Words</button>
+  <form id="testForm" class="hidden">
+    <div id="wordInputs"></div>
+    <br>
+    <button type="submit">Submit Answers</button>
+  </form>
+  <div id="result"></div>
+  <button id="nextLevelButton" class="hidden">Next Level</button>
+
+  <script>
+    // Define the levels using the words from your PDF.
+    // (Note: "Amber" level includes two blocks merged together.)
+    const levels = [
+      { name: "Golden", words: [ "a", "and", "be", "I", "in", "is", "it", "of", "that", "the", "to", "was" ] },
+      { name: "Red", words: [ "all", "are", "as", "at", "but", "for", "had", "have", "he", "her", "his", "not", "on", "one", "said", "so", "they", "we", "with", "you" ] },
+      { name: "Blue", words: [ "an", "by", "do", "go", "if", "me", "my", "no", "or", "up" ] },
+      { name: "Green", words: [ "big", "can", "did", "get", "has", "him", "new", "now", "off", "old", "our", "out", "see", "she", "two", "who" ] },
+      { name: "Orange", words: [ "back", "been", "came", "down", "from", "into", "just", "like", "made", "much", "over", "them", "this", "well", "went", "when" ] },
+      { name: "Indigo", words: [ "call", "come", "here", "make", "must", "only", "some", "then", "were", "what", "will", "your" ] },
+      { name: "Violet", words: [ "about", "before", "could", "first", "little", "look", "more", "other", "right", "their", "there", "want", "where", "which" ] },
+      { name: "Pink", words: [ "after", "am", "boy", "day", "eat", "five", "fly", "girl", "good", "help", "home", "jump", "play", "ran", "read", "saw", "sing", "sit", "think", "us" ] },
+      { name: "Purple", words: [ "again", "ask", "best", "bring", "far", "find", "give", "how", "kind", "left", "man", "mother", "own", "room", "say", "stop", "these", "too", "walk", "wish" ] },
+      { name: "Aqua", words: [ "always", "away", "bird", "dog", "fast", "four", "going", "hand", "keep", "let", "many", "night", "people", "round", "school", "take", "thing", "tree", "water", "work" ] },
+      { name: "Lime", words: [ "another", "ate", "bad", "father", "found", "got", "head", "know", "live", "may", "name", "once", "put", "run", "should", "tell", "three", "under", "would", "write" ] },
+      { name: "Lemon", words: [ "any", "because", "cat", "each", "every", "gave", "house", "last", "long", "morning", "open", "small", "soon", "than", "time", "use", "very", "why", "year", "yes" ] },
+      { name: "Pearl", words: [ "red", "blue", "green", "black", "white", "orange", "yellow", "brown", "light", "dark", "six", "seven", "eight", "nine", "ten", "second", "minute", "hour", "week", "month" ] },
+      { name: "Ruby", words: [ "mum", "dad", "baby", "sister", "brother", "family", "children", "kids", "men", "women", "parent", "person", "love", "heart", "friend", "body", "face", "eye", "leg", "feet" ] },
+      { name: "Sapphire", words: [ "sound", "letter", "word", "sentence", "line", "book", "story", "picture", "page", "paper", "front", "start", "end", "hold", "draw", "class", "study", "learn", "spell", "list" ] },
+      { name: "Jade", words: [ "space", "earth", "moon", "sun", "star", "world", "sea", "land", "ground", "sky", "plant", "flower", "grow", "field", "rain", "wind", "air", "fire", "hot", "cold" ] },
+      { name: "Amber", words: [ 
+          "fun", "game", "bike", "ride", "race", 
+          "ball", "happy", "party", "doll", "toy", 
+          "song", "music", "beautiful", "together", "watch", 
+          "season", "summer", "autumn", "winter", "spring",
+          "each", "chew", "football", "calm", "knew", 
+          "beach", "today", "join", "clean", "uncle", 
+          "different", "picnic", "easy", "float", "write", 
+          "birthday", "try", "please", "asked", "bread" 
+        ] 
+      },
+      { name: "Raspberry", words: [ "turn", "young", "church", "above", "circus", "push", "aunty", "lady", "asleep", "concert", "wrong", "cousin", "doctor", "circle", "great", "roaring", "chose", "rather", "piece", "view" ] },
+      { name: "Rose", words: [ "although", "tiny", "road", "already", "tomorrow", "towards", "often", "pretty", "garden", "sauce", "toilet", "engine", "among", "yesterday", "island", "serve", "weekend", "area", "used", "myself" ] },
+      { name: "Scarlet", words: [ "early", "animal", "drink", "feature", "movie", "outside", "busy", "pair", "even", "chair", "lovely", "idea", "grass", "path", "warm", "creature", "alive", "won", "hair", "train" ] },
+      { name: "Crimson", words: [ "hospital", "whole", "bottom", "quite", "wait", "never", "better", "holiday", "until", "lunch", "opened", "edge", "through", "fight", "hurt", "getting", "tonight", "measure", "chicken", "happened" ] },
+      { name: "Garnet", words: [ "funny", "blend", "carry", "rural", "cut", "done", "fall", "herself", "scary", "pick", "knight", "full", "rent", "almost", "bake", "bend", "beat", "bliss", "cap", "case" ] },
+      { name: "Marigold", words: [ "awake", "beans", "beside", "bill", "button", "chin", "count", "desk", "dry", "dust", "feather", "grew", "hall", "hidden", "kiss", "peas", "carrot", "pond", "press", "yummy" ] },
+      { name: "Tangerine", words: [ "bowl", "brave", "brick", "bug", "care", "cover", "creek", "else", "fur", "hung", "lake", "pale", "row", "save", "shine", "silver", "wool", "sour", "kiosk", "infect" ] },
+      { name: "Apricot", words: [ "clap", "pumpkin", "shook", "soup", "suppose", "tooth", "trade", "bitter", "swap", "hollow", "sign", "pedal", "instruct", "fright", "iron", "govern", "crawl", "blown", "raise", "prince" ] },
+      { name: "Marmalade", words: [ "numeral", "opinion", "region", "produce", "avoid", "original", "root", "admire", "myth", "groan", "petal", "missed", "accept", "align", "arena", "proceed", "accent", "adjust", "inhale", "volume" ] },
+      { name: "Clay", words: [ "plastic", "believe", "ballet", "finished", "country", "colourful", "against", "nobody", "lucky", "rocket", "strange", "wasn’t", "breakfast", "everyone", "arrived", "chasing", "follow", "across", "mistake", "knife" ] },
+      { name: "Emerald", words: [ "leave", "teacher", "dollars", "bridge", "goes", "excited", "cruel", "cricket", "city", "chapter", "reach", "cycle", "huge", "cents", "recess", "century", "decided", "rainbow", "length", "whistle" ] },
+      { name: "Olive", words: [ "freeze", "guess", "afraid", "poor", "does", "nothing", "presents", "dinner", "lonely", "contain", "twenty", "snatch", "guard", "ghost", "purple", "clothes", "Christmas", "enough", "slowly", "station" ] },
+      { name: "Peacock", words: [ "apple", "thief", "hundred", "listen", "Easter", "while", "tired", "money", "paddle", "square", "wheel", "diary", "hammer", "orange", "waste", "answer", "whale", "noise", "monkeys", "straw" ] },
+      { name: "Mint", words: [ "taste", "swimming", "juice", "fruit", "remember", "simple", "choice", "public", "lose", "rough", "photograph", "couldn’t", "cloud", "important", "laugh", "either", "switch", "entrance", "probably", "mirror" ] },
+      { name: "Teal", words: [ "television", "surprise", "anything", "finally", "favourite", "bought", "pattern", "special", "window", "vegetable", "blood", "especially", "terrible", "everything", "lightning", "electric", "weather", "Australia", "dream", "dancing" ] },
+      { name: "Turquoise", words: [ "oxygen", "machine", "during", "diamond", "cupboard", "thought", "themselves", "climbed", "you’re", "loose", "muscle", "direction", "shoulder", "reason", "yourself", "battery", "planet", "everywhere", "scared", "eleven" ] },
+      { name: "Cobalt", words: [ "stretch", "potatoes", "problem", "enormous", "radio", "describe", "chance", "woman", "continue", "solution", "someone", "middle", "magician", "angels", "understand", "library", "aloud", "pull", "Canberra", "weird" ] },
+      { name: "Denim", words: [ "pillow", "hidden", "bouquet", "nephew", "exercise", "several", "since", "cheaper", "umbrella", "distance", "dreadful", "museum", "appear", "whisper", "instrument", "pyjamas", "nervous", "honest", "information", "trouble" ] },
+      { name: "Topaz", words: [ "husband", "interview", "dangerous", "cough", "grown", "wonderful", "haunted", "rhythm", "death", "millions", "popular", "sandwich", "blanket", "
