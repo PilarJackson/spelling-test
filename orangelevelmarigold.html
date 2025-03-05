@@ -1,0 +1,33 @@
+﻿<!DOCTYPE html>
+<html lang='en'>
+<head>
+  <meta charset='UTF-8'>
+  <title>Orange Level - Marigold - Review</title>
+  <link rel='stylesheet' href='styles.css'>
+  <link rel='stylesheet' href='header.css'>
+</head>
+<body class='marigold-level'>
+  <div id='header-container'></div>
+  <main>
+    <h1 style='text-align: center;'>Orange Level - Marigold Level Words</h1>
+    <div style='display:flex; justify-content:center; align-items:flex-start; gap:20px; margin-top:20px;'>
+      <div class='word-list' style='flex:1; text-align:left;'>
+        <table style='margin-left:1cm; width:90%; border-collapse:collapse;'><tr><td style='padding:5px; border:1px solid #ddd; text-align:center;'>awake</td><td style='padding:5px; border:1px solid #ddd; text-align:center;'>beans</td><td style='padding:5px; border:1px solid #ddd; text-align:center;'>beside</td><td style='padding:5px; border:1px solid #ddd; text-align:center;'>bill</td><td style='padding:5px; border:1px solid #ddd; text-align:center;'>button</td></tr><tr><td style='padding:5px; border:1px solid #ddd; text-align:center;'>chin</td><td style='padding:5px; border:1px solid #ddd; text-align:center;'>count</td><td style='padding:5px; border:1px solid #ddd; text-align:center;'>desk</td><td style='padding:5px; border:1px solid #ddd; text-align:center;'>dry</td><td style='padding:5px; border:1px solid #ddd; text-align:center;'>dust</td></tr><tr><td style='padding:5px; border:1px solid #ddd; text-align:center;'>feather</td><td style='padding:5px; border:1px solid #ddd; text-align:center;'>grew</td><td style='padding:5px; border:1px solid #ddd; text-align:center;'>hall</td><td style='padding:5px; border:1px solid #ddd; text-align:center;'>hidden</td><td style='padding:5px; border:1px solid #ddd; text-align:center;'>kiss</td></tr><tr><td style='padding:5px; border:1px solid #ddd; text-align:center;'>peas</td><td style='padding:5px; border:1px solid #ddd; text-align:center;'>carrot</td><td style='padding:5px; border:1px solid #ddd; text-align:center;'>pond</td><td style='padding:5px; border:1px solid #ddd; text-align:center;'>press</td><td style='padding:5px; border:1px solid #ddd; text-align:center;'>yummy</td></tr><tr></table>
+      </div>
+      <div class='image-container' style='flex:1; text-align:center; border:2px solid black; padding:5px;'>
+        <img src='http://sapintranet.sap.local/Words/files/Orange_Level.png' alt='Level Image' style='max-width:400px; height:auto; border:2px solid black;'/>
+      </div>
+    </div>
+    <section class='controls' style='text-align: center; margin-top: 20px;'>
+      <button onclick='speakWords(["awake", "beans", "beside", "bill", "button", "chin", "count", "desk", "dry", "dust", "feather", "grew", "hall", "hidden", "kiss", "peas", "carrot", "pond", "press", "yummy"])'>Listen to Words</button>
+      <a href='orangelevelmarigold-test.html'><button>Start Test</button></a>
+    </section>
+  </main>
+  <script src='scripts.js'></script>
+  <script>
+    fetch('header.html')
+      .then(response => response.text())
+      .then(data => { document.getElementById('header-container').innerHTML = data; });
+  </script>
+</body>
+</html>

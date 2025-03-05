@@ -1,0 +1,33 @@
+﻿<!DOCTYPE html>
+<html lang='en'>
+<head>
+  <meta charset='UTF-8'>
+  <title>Yellow Level - Buttercup - Review</title>
+  <link rel='stylesheet' href='styles.css'>
+  <link rel='stylesheet' href='header.css'>
+</head>
+<body class='buttercup-level'>
+  <div id='header-container'></div>
+  <main>
+    <h1 style='text-align: center;'>Yellow Level - Buttercup Level Words</h1>
+    <div style='display:flex; justify-content:center; align-items:flex-start; gap:20px; margin-top:20px;'>
+      <div class='word-list' style='flex:1; text-align:left;'>
+        <table style='margin-left:1cm; width:90%; border-collapse:collapse;'><tr><td style='padding:5px; border:1px solid #ddd; text-align:center;'>revision</td><td style='padding:5px; border:1px solid #ddd; text-align:center;'>queue</td><td style='padding:5px; border:1px solid #ddd; text-align:center;'>jealous</td><td style='padding:5px; border:1px solid #ddd; text-align:center;'>families</td><td style='padding:5px; border:1px solid #ddd; text-align:center;'>address</td></tr><tr><td style='padding:5px; border:1px solid #ddd; text-align:center;'>Sydney</td><td style='padding:5px; border:1px solid #ddd; text-align:center;'>allowed</td><td style='padding:5px; border:1px solid #ddd; text-align:center;'>energy</td><td style='padding:5px; border:1px solid #ddd; text-align:center;'>frightened</td><td style='padding:5px; border:1px solid #ddd; text-align:center;'>involved</td></tr><tr><td style='padding:5px; border:1px solid #ddd; text-align:center;'>injury</td><td style='padding:5px; border:1px solid #ddd; text-align:center;'>biscuit</td><td style='padding:5px; border:1px solid #ddd; text-align:center;'>interesting</td><td style='padding:5px; border:1px solid #ddd; text-align:center;'>quietly</td><td style='padding:5px; border:1px solid #ddd; text-align:center;'>certainly</td></tr><tr><td style='padding:5px; border:1px solid #ddd; text-align:center;'>circuit</td><td style='padding:5px; border:1px solid #ddd; text-align:center;'>telephone</td><td style='padding:5px; border:1px solid #ddd; text-align:center;'>garbage</td><td style='padding:5px; border:1px solid #ddd; text-align:center;'>argue</td><td style='padding:5px; border:1px solid #ddd; text-align:center;'>sincerely</td></tr><tr></table>
+      </div>
+      <div class='image-container' style='flex:1; text-align:center; border:2px solid black; padding:5px;'>
+        <img src='http://sapintranet.sap.local/Words/files/Yellow_Level.png' alt='Level Image' style='max-width:400px; height:auto; border:2px solid black;'/>
+      </div>
+    </div>
+    <section class='controls' style='text-align: center; margin-top: 20px;'>
+      <button onclick='speakWords(["revision", "queue", "jealous", "families", "address", "Sydney", "allowed", "energy", "frightened", "involved", "injury", "biscuit", "interesting", "quietly", "certainly", "circuit", "telephone", "garbage", "argue", "sincerely"])'>Listen to Words</button>
+      <a href='yellowlevelbuttercup-test.html'><button>Start Test</button></a>
+    </section>
+  </main>
+  <script src='scripts.js'></script>
+  <script>
+    fetch('header.html')
+      .then(response => response.text())
+      .then(data => { document.getElementById('header-container').innerHTML = data; });
+  </script>
+</body>
+</html>

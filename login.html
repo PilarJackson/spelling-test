@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Login</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="header.css">
+</head>
+<body>
+  <!-- Shared header -->
+  <div id="header-container"></div>
+  
+  <main style="text-align: center;">
+    <h1>Login</h1>
+    <form id="login-form">
+      <label>Username: <input type="text" id="login-username" required></label><br>
+      <label>Password: <input type="password" id="login-password" required></label><br>
+      <button type="submit">Login</button>
+    </form>
+    <div id="login-message"></div>
+    <p>Don't have an account? <a href="register.html">Register</a></p>
+  </main>
+
+  <script src="scripts.js"></script>
+  <script>
+    // Load header
+    fetch('header.html')
+      .then(response => response.text())
+      .then(data => { document.getElementById('header-container').innerHTML = data; });
+
+    document.getElementById('login-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const username = document.getElementById('login-username').value.trim();
+      const password = document.getElementById('login-password').value;
+      
+      let users = JSON.parse(localStorage.getItem('users')) || {};
+      if(users[username] && users[username].password === password){
+        localStorage.setItem('currentUser', username);
+        window.location.href = "dashboard.html";
+      } else {
+        document.getElementById('login-message').innerText = "Invalid username or password!";
+      }
+    });
+  </script>
+</body>
+</html>

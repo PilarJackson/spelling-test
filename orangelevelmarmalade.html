@@ -1,0 +1,33 @@
+﻿<!DOCTYPE html>
+<html lang='en'>
+<head>
+  <meta charset='UTF-8'>
+  <title>Orange Level - Marmalade - Review</title>
+  <link rel='stylesheet' href='styles.css'>
+  <link rel='stylesheet' href='header.css'>
+</head>
+<body class='marmalade-level'>
+  <div id='header-container'></div>
+  <main>
+    <h1 style='text-align: center;'>Orange Level - Marmalade Level Words</h1>
+    <div style='display:flex; justify-content:center; align-items:flex-start; gap:20px; margin-top:20px;'>
+      <div class='word-list' style='flex:1; text-align:left;'>
+        <table style='margin-left:1cm; width:90%; border-collapse:collapse;'><tr><td style='padding:5px; border:1px solid #ddd; text-align:center;'>numeral</td><td style='padding:5px; border:1px solid #ddd; text-align:center;'>opinion</td><td style='padding:5px; border:1px solid #ddd; text-align:center;'>region</td><td style='padding:5px; border:1px solid #ddd; text-align:center;'>produce</td><td style='padding:5px; border:1px solid #ddd; text-align:center;'>avoid</td></tr><tr><td style='padding:5px; border:1px solid #ddd; text-align:center;'>original</td><td style='padding:5px; border:1px solid #ddd; text-align:center;'>root</td><td style='padding:5px; border:1px solid #ddd; text-align:center;'>admire</td><td style='padding:5px; border:1px solid #ddd; text-align:center;'>myth</td><td style='padding:5px; border:1px solid #ddd; text-align:center;'>groan</td></tr><tr><td style='padding:5px; border:1px solid #ddd; text-align:center;'>petal</td><td style='padding:5px; border:1px solid #ddd; text-align:center;'>missed</td><td style='padding:5px; border:1px solid #ddd; text-align:center;'>accept</td><td style='padding:5px; border:1px solid #ddd; text-align:center;'>align</td><td style='padding:5px; border:1px solid #ddd; text-align:center;'>arena</td></tr><tr><td style='padding:5px; border:1px solid #ddd; text-align:center;'>proceed</td><td style='padding:5px; border:1px solid #ddd; text-align:center;'>accent</td><td style='padding:5px; border:1px solid #ddd; text-align:center;'>adjust</td><td style='padding:5px; border:1px solid #ddd; text-align:center;'>inhale</td><td style='padding:5px; border:1px solid #ddd; text-align:center;'>volume</td></tr><tr></table>
+      </div>
+      <div class='image-container' style='flex:1; text-align:center; border:2px solid black; padding:5px;'>
+        <img src='http://sapintranet.sap.local/Words/files/Orange_Level.png' alt='Level Image' style='max-width:400px; height:auto; border:2px solid black;'/>
+      </div>
+    </div>
+    <section class='controls' style='text-align: center; margin-top: 20px;'>
+      <button onclick='speakWords(["numeral", "opinion", "region", "produce", "avoid", "original", "root", "admire", "myth", "groan", "petal", "missed", "accept", "align", "arena", "proceed", "accent", "adjust", "inhale", "volume"])'>Listen to Words</button>
+      <a href='orangelevelmarmalade-test.html'><button>Start Test</button></a>
+    </section>
+  </main>
+  <script src='scripts.js'></script>
+  <script>
+    fetch('header.html')
+      .then(response => response.text())
+      .then(data => { document.getElementById('header-container').innerHTML = data; });
+  </script>
+</body>
+</html>

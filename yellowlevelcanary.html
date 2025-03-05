@@ -1,0 +1,33 @@
+﻿<!DOCTYPE html>
+<html lang='en'>
+<head>
+  <meta charset='UTF-8'>
+  <title>Yellow Level - Canary - Review</title>
+  <link rel='stylesheet' href='styles.css'>
+  <link rel='stylesheet' href='header.css'>
+</head>
+<body class='canary-level'>
+  <div id='header-container'></div>
+  <main>
+    <h1 style='text-align: center;'>Yellow Level - Canary Level Words</h1>
+    <div style='display:flex; justify-content:center; align-items:flex-start; gap:20px; margin-top:20px;'>
+      <div class='word-list' style='flex:1; text-align:left;'>
+        <table style='margin-left:1cm; width:90%; border-collapse:collapse;'><tr><td style='padding:5px; border:1px solid #ddd; text-align:center;'>triangle</td><td style='padding:5px; border:1px solid #ddd; text-align:center;'>company</td><td style='padding:5px; border:1px solid #ddd; text-align:center;'>excursion</td><td style='padding:5px; border:1px solid #ddd; text-align:center;'>courage</td><td style='padding:5px; border:1px solid #ddd; text-align:center;'>awful</td></tr><tr><td style='padding:5px; border:1px solid #ddd; text-align:center;'>bruise</td><td style='padding:5px; border:1px solid #ddd; text-align:center;'>usually</td><td style='padding:5px; border:1px solid #ddd; text-align:center;'>ordinary</td><td style='padding:5px; border:1px solid #ddd; text-align:center;'>slippery</td><td style='padding:5px; border:1px solid #ddd; text-align:center;'>vehicle</td></tr><tr><td style='padding:5px; border:1px solid #ddd; text-align:center;'>embarrass</td><td style='padding:5px; border:1px solid #ddd; text-align:center;'>religion</td><td style='padding:5px; border:1px solid #ddd; text-align:center;'>quarter</td><td style='padding:5px; border:1px solid #ddd; text-align:center;'>thankful</td><td style='padding:5px; border:1px solid #ddd; text-align:center;'>silence</td></tr><tr><td style='padding:5px; border:1px solid #ddd; text-align:center;'>spectators</td><td style='padding:5px; border:1px solid #ddd; text-align:center;'>launch</td><td style='padding:5px; border:1px solid #ddd; text-align:center;'>halves</td><td style='padding:5px; border:1px solid #ddd; text-align:center;'>stomach</td><td style='padding:5px; border:1px solid #ddd; text-align:center;'>penguin</td></tr><tr></table>
+      </div>
+      <div class='image-container' style='flex:1; text-align:center; border:2px solid black; padding:5px;'>
+        <img src='http://sapintranet.sap.local/Words/files/Yellow_Level.png' alt='Level Image' style='max-width:400px; height:auto; border:2px solid black;'/>
+      </div>
+    </div>
+    <section class='controls' style='text-align: center; margin-top: 20px;'>
+      <button onclick='speakWords(["triangle", "company", "excursion", "courage", "awful", "bruise", "usually", "ordinary", "slippery", "vehicle", "embarrass", "religion", "quarter", "thankful", "silence", "spectators", "launch", "halves", "stomach", "penguin"])'>Listen to Words</button>
+      <a href='yellowlevelcanary-test.html'><button>Start Test</button></a>
+    </section>
+  </main>
+  <script src='scripts.js'></script>
+  <script>
+    fetch('header.html')
+      .then(response => response.text())
+      .then(data => { document.getElementById('header-container').innerHTML = data; });
+  </script>
+</body>
+</html>

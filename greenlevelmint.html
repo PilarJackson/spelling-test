@@ -1,0 +1,33 @@
+﻿<!DOCTYPE html>
+<html lang='en'>
+<head>
+  <meta charset='UTF-8'>
+  <title>Green Level - Mint - Review</title>
+  <link rel='stylesheet' href='styles.css'>
+  <link rel='stylesheet' href='header.css'>
+</head>
+<body class='mint-level'>
+  <div id='header-container'></div>
+  <main>
+    <h1 style='text-align: center;'>Green Level - Mint Level Words</h1>
+    <div style='display:flex; justify-content:center; align-items:flex-start; gap:20px; margin-top:20px;'>
+      <div class='word-list' style='flex:1; text-align:left;'>
+        <table style='margin-left:1cm; width:90%; border-collapse:collapse;'><tr><td style='padding:5px; border:1px solid #ddd; text-align:center;'>taste</td><td style='padding:5px; border:1px solid #ddd; text-align:center;'>swimming</td><td style='padding:5px; border:1px solid #ddd; text-align:center;'>juice</td><td style='padding:5px; border:1px solid #ddd; text-align:center;'>fruit</td><td style='padding:5px; border:1px solid #ddd; text-align:center;'>remember</td></tr><tr><td style='padding:5px; border:1px solid #ddd; text-align:center;'>simple</td><td style='padding:5px; border:1px solid #ddd; text-align:center;'>choice</td><td style='padding:5px; border:1px solid #ddd; text-align:center;'>public</td><td style='padding:5px; border:1px solid #ddd; text-align:center;'>lose</td><td style='padding:5px; border:1px solid #ddd; text-align:center;'>rough</td></tr><tr><td style='padding:5px; border:1px solid #ddd; text-align:center;'>photograph</td><td style='padding:5px; border:1px solid #ddd; text-align:center;'>couldn't</td><td style='padding:5px; border:1px solid #ddd; text-align:center;'>cloud</td><td style='padding:5px; border:1px solid #ddd; text-align:center;'>important</td><td style='padding:5px; border:1px solid #ddd; text-align:center;'>laugh</td></tr><tr><td style='padding:5px; border:1px solid #ddd; text-align:center;'>either</td><td style='padding:5px; border:1px solid #ddd; text-align:center;'>switch</td><td style='padding:5px; border:1px solid #ddd; text-align:center;'>entrance</td><td style='padding:5px; border:1px solid #ddd; text-align:center;'>probably</td><td style='padding:5px; border:1px solid #ddd; text-align:center;'>mirror</td></tr><tr></table>
+      </div>
+      <div class='image-container' style='flex:1; text-align:center; border:2px solid black; padding:5px;'>
+        <img src='http://sapintranet.sap.local/Words/files/Green_Level.png' alt='Level Image' style='max-width:400px; height:auto; border:2px solid black;'/>
+      </div>
+    </div>
+    <section class='controls' style='text-align: center; margin-top: 20px;'>
+      <button onclick='speakWords(["taste", "swimming", "juice", "fruit", "remember", "simple", "choice", "public", "lose", "rough", "photograph", "couldn't", "cloud", "important", "laugh", "either", "switch", "entrance", "probably", "mirror"])'>Listen to Words</button>
+      <a href='greenlevelmint-test.html'><button>Start Test</button></a>
+    </section>
+  </main>
+  <script src='scripts.js'></script>
+  <script>
+    fetch('header.html')
+      .then(response => response.text())
+      .then(data => { document.getElementById('header-container').innerHTML = data; });
+  </script>
+</body>
+</html>

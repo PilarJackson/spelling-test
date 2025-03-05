@@ -1,0 +1,33 @@
+﻿<!DOCTYPE html>
+<html lang='en'>
+<head>
+  <meta charset='UTF-8'>
+  <title>Green Level - Emerald - Review</title>
+  <link rel='stylesheet' href='styles.css'>
+  <link rel='stylesheet' href='header.css'>
+</head>
+<body class='emerald-level'>
+  <div id='header-container'></div>
+  <main>
+    <h1 style='text-align: center;'>Green Level - Emerald Level Words</h1>
+    <div style='display:flex; justify-content:center; align-items:flex-start; gap:20px; margin-top:20px;'>
+      <div class='word-list' style='flex:1; text-align:left;'>
+        <table style='margin-left:1cm; width:90%; border-collapse:collapse;'><tr><td style='padding:5px; border:1px solid #ddd; text-align:center;'>leave</td><td style='padding:5px; border:1px solid #ddd; text-align:center;'>teacher</td><td style='padding:5px; border:1px solid #ddd; text-align:center;'>dollars</td><td style='padding:5px; border:1px solid #ddd; text-align:center;'>bridge</td><td style='padding:5px; border:1px solid #ddd; text-align:center;'>goes</td></tr><tr><td style='padding:5px; border:1px solid #ddd; text-align:center;'>excited</td><td style='padding:5px; border:1px solid #ddd; text-align:center;'>cruel</td><td style='padding:5px; border:1px solid #ddd; text-align:center;'>cricket</td><td style='padding:5px; border:1px solid #ddd; text-align:center;'>city</td><td style='padding:5px; border:1px solid #ddd; text-align:center;'>chapter</td></tr><tr><td style='padding:5px; border:1px solid #ddd; text-align:center;'>reach</td><td style='padding:5px; border:1px solid #ddd; text-align:center;'>cycle</td><td style='padding:5px; border:1px solid #ddd; text-align:center;'>huge</td><td style='padding:5px; border:1px solid #ddd; text-align:center;'>cents</td><td style='padding:5px; border:1px solid #ddd; text-align:center;'>recess</td></tr><tr><td style='padding:5px; border:1px solid #ddd; text-align:center;'>century</td><td style='padding:5px; border:1px solid #ddd; text-align:center;'>decided</td><td style='padding:5px; border:1px solid #ddd; text-align:center;'>rainbow</td><td style='padding:5px; border:1px solid #ddd; text-align:center;'>length</td><td style='padding:5px; border:1px solid #ddd; text-align:center;'>whistle</td></tr><tr></table>
+      </div>
+      <div class='image-container' style='flex:1; text-align:center; border:2px solid black; padding:5px;'>
+        <img src='http://sapintranet.sap.local/Words/files/Green_Level.png' alt='Level Image' style='max-width:400px; height:auto; border:2px solid black;'/>
+      </div>
+    </div>
+    <section class='controls' style='text-align: center; margin-top: 20px;'>
+      <button onclick='speakWords(["leave", "teacher", "dollars", "bridge", "goes", "excited", "cruel", "cricket", "city", "chapter", "reach", "cycle", "huge", "cents", "recess", "century", "decided", "rainbow", "length", "whistle"])'>Listen to Words</button>
+      <a href='greenlevelemerald-test.html'><button>Start Test</button></a>
+    </section>
+  </main>
+  <script src='scripts.js'></script>
+  <script>
+    fetch('header.html')
+      .then(response => response.text())
+      .then(data => { document.getElementById('header-container').innerHTML = data; });
+  </script>
+</body>
+</html>

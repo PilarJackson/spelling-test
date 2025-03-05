@@ -1,0 +1,33 @@
+﻿<!DOCTYPE html>
+<html lang='en'>
+<head>
+  <meta charset='UTF-8'>
+  <title>Ruby - Review</title>
+  <link rel='stylesheet' href='styles.css'>
+  <link rel='stylesheet' href='header.css'>
+</head>
+<body class='ruby-level'>
+  <div id='header-container'></div>
+  <main>
+    <h1 style='text-align: center;'>Ruby Level Words</h1>
+    <div style='display:flex; justify-content:center; align-items:flex-start; gap:20px; margin-top:20px;'>
+      <div class='word-list' style='flex:1; text-align:left;'>
+        <table style='margin-left:1cm; width:90%; border-collapse:collapse;'><tr><td style='padding:5px; border:1px solid #ddd; text-align:center;'>mum</td><td style='padding:5px; border:1px solid #ddd; text-align:center;'>dad</td><td style='padding:5px; border:1px solid #ddd; text-align:center;'>baby</td><td style='padding:5px; border:1px solid #ddd; text-align:center;'>sister</td><td style='padding:5px; border:1px solid #ddd; text-align:center;'>brother</td></tr><tr><td style='padding:5px; border:1px solid #ddd; text-align:center;'>family</td><td style='padding:5px; border:1px solid #ddd; text-align:center;'>children</td><td style='padding:5px; border:1px solid #ddd; text-align:center;'>kids</td><td style='padding:5px; border:1px solid #ddd; text-align:center;'>men</td><td style='padding:5px; border:1px solid #ddd; text-align:center;'>women</td></tr><tr><td style='padding:5px; border:1px solid #ddd; text-align:center;'>parent</td><td style='padding:5px; border:1px solid #ddd; text-align:center;'>person</td><td style='padding:5px; border:1px solid #ddd; text-align:center;'>love</td><td style='padding:5px; border:1px solid #ddd; text-align:center;'>heart</td><td style='padding:5px; border:1px solid #ddd; text-align:center;'>friend</td></tr><tr><td style='padding:5px; border:1px solid #ddd; text-align:center;'>body</td><td style='padding:5px; border:1px solid #ddd; text-align:center;'>face</td><td style='padding:5px; border:1px solid #ddd; text-align:center;'>eye</td><td style='padding:5px; border:1px solid #ddd; text-align:center;'>leg</td><td style='padding:5px; border:1px solid #ddd; text-align:center;'>feet</td></tr><tr></table>
+      </div>
+      <div class='image-container' style='flex:1; text-align:center; border:2px solid black; padding:5px;'>
+        <img src='http://sapintranet.sap.local/Words/files/Ruby_Level_Words.png' alt='Level Image' style='max-width:400px; height:auto; border:2px solid black;'/>
+      </div>
+    </div>
+    <section class='controls' style='text-align: center; margin-top: 20px;'>
+      <button onclick='speakWords(["mum", "dad", "baby", "sister", "brother", "family", "children", "kids", "men", "women", "parent", "person", "love", "heart", "friend", "body", "face", "eye", "leg", "feet"])'>Listen to Words</button>
+      <a href='ruby-test.html'><button>Start Test</button></a>
+    </section>
+  </main>
+  <script src='scripts.js'></script>
+  <script>
+    fetch('header.html')
+      .then(response => response.text())
+      .then(data => { document.getElementById('header-container').innerHTML = data; });
+  </script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+﻿<!DOCTYPE html>
+<html lang='en'>
+<head>
+  <meta charset='UTF-8'>
+  <title>Purple Level - Amethyst - Review</title>
+  <link rel='stylesheet' href='styles.css'>
+  <link rel='stylesheet' href='header.css'>
+</head>
+<body class='amethyst-level'>
+  <div id='header-container'></div>
+  <main>
+    <h1 style='text-align: center;'>Purple Level - Amethyst Level Words</h1>
+    <div style='display:flex; justify-content:center; align-items:flex-start; gap:20px; margin-top:20px;'>
+      <div class='word-list' style='flex:1; text-align:left;'>
+        <table style='margin-left:1cm; width:90%; border-collapse:collapse;'><tr><td style='padding:5px; border:1px solid #ddd; text-align:center;'>mystery</td><td style='padding:5px; border:1px solid #ddd; text-align:center;'>cheque</td><td style='padding:5px; border:1px solid #ddd; text-align:center;'>heard</td><td style='padding:5px; border:1px solid #ddd; text-align:center;'>gorgeous</td><td style='padding:5px; border:1px solid #ddd; text-align:center;'>sturdy</td></tr><tr><td style='padding:5px; border:1px solid #ddd; text-align:center;'>facial</td><td style='padding:5px; border:1px solid #ddd; text-align:center;'>imagine</td><td style='padding:5px; border:1px solid #ddd; text-align:center;'>demand</td><td style='padding:5px; border:1px solid #ddd; text-align:center;'>severe</td><td style='padding:5px; border:1px solid #ddd; text-align:center;'>necessary</td></tr><tr><td style='padding:5px; border:1px solid #ddd; text-align:center;'>scissors</td><td style='padding:5px; border:1px solid #ddd; text-align:center;'>warn</td><td style='padding:5px; border:1px solid #ddd; text-align:center;'>terrified</td><td style='padding:5px; border:1px solid #ddd; text-align:center;'>average</td><td style='padding:5px; border:1px solid #ddd; text-align:center;'>future</td></tr><tr><td style='padding:5px; border:1px solid #ddd; text-align:center;'>regular</td><td style='padding:5px; border:1px solid #ddd; text-align:center;'>encourage</td><td style='padding:5px; border:1px solid #ddd; text-align:center;'>intelligence</td><td style='padding:5px; border:1px solid #ddd; text-align:center;'>forfeit</td><td style='padding:5px; border:1px solid #ddd; text-align:center;'>brochure</td></tr><tr></table>
+      </div>
+      <div class='image-container' style='flex:1; text-align:center; border:2px solid black; padding:5px;'>
+        <img src='http://sapintranet.sap.local/Words/files/Purple_Level.png' alt='Level Image' style='max-width:400px; height:auto; border:2px solid black;'/>
+      </div>
+    </div>
+    <section class='controls' style='text-align: center; margin-top: 20px;'>
+      <button onclick='speakWords(["mystery", "cheque", "heard", "gorgeous", "sturdy", "facial", "imagine", "demand", "severe", "necessary", "scissors", "warn", "terrified", "average", "future", "regular", "encourage", "intelligence", "forfeit", "brochure"])'>Listen to Words</button>
+      <a href='purplelevelamethyst-test.html'><button>Start Test</button></a>
+    </section>
+  </main>
+  <script src='scripts.js'></script>
+  <script>
+    fetch('header.html')
+      .then(response => response.text())
+      .then(data => { document.getElementById('header-container').innerHTML = data; });
+  </script>
+</body>
+</html>

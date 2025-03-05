@@ -1,0 +1,33 @@
+﻿<!DOCTYPE html>
+<html lang='en'>
+<head>
+  <meta charset='UTF-8'>
+  <title>Pearl - Review</title>
+  <link rel='stylesheet' href='styles.css'>
+  <link rel='stylesheet' href='header.css'>
+</head>
+<body class='pearl-level'>
+  <div id='header-container'></div>
+  <main>
+    <h1 style='text-align: center;'>Pearl Level Words</h1>
+    <div style='display:flex; justify-content:center; align-items:flex-start; gap:20px; margin-top:20px;'>
+      <div class='word-list' style='flex:1; text-align:left;'>
+        <table style='margin-left:1cm; width:90%; border-collapse:collapse;'><tr><td style='padding:5px; border:1px solid #ddd; text-align:center;'>red</td><td style='padding:5px; border:1px solid #ddd; text-align:center;'>blue</td><td style='padding:5px; border:1px solid #ddd; text-align:center;'>green</td><td style='padding:5px; border:1px solid #ddd; text-align:center;'>black</td><td style='padding:5px; border:1px solid #ddd; text-align:center;'>white</td></tr><tr><td style='padding:5px; border:1px solid #ddd; text-align:center;'>orange</td><td style='padding:5px; border:1px solid #ddd; text-align:center;'>yellow</td><td style='padding:5px; border:1px solid #ddd; text-align:center;'>brown</td><td style='padding:5px; border:1px solid #ddd; text-align:center;'>light</td><td style='padding:5px; border:1px solid #ddd; text-align:center;'>dark</td></tr><tr><td style='padding:5px; border:1px solid #ddd; text-align:center;'>six</td><td style='padding:5px; border:1px solid #ddd; text-align:center;'>seven</td><td style='padding:5px; border:1px solid #ddd; text-align:center;'>eight</td><td style='padding:5px; border:1px solid #ddd; text-align:center;'>nine</td><td style='padding:5px; border:1px solid #ddd; text-align:center;'>ten</td></tr><tr><td style='padding:5px; border:1px solid #ddd; text-align:center;'>second</td><td style='padding:5px; border:1px solid #ddd; text-align:center;'>minute</td><td style='padding:5px; border:1px solid #ddd; text-align:center;'>hour</td><td style='padding:5px; border:1px solid #ddd; text-align:center;'>week</td><td style='padding:5px; border:1px solid #ddd; text-align:center;'>month</td></tr><tr></table>
+      </div>
+      <div class='image-container' style='flex:1; text-align:center; border:2px solid black; padding:5px;'>
+        <img src='http://sapintranet.sap.local/Words/files/Pearl_Level_Words.png' alt='Level Image' style='max-width:400px; height:auto; border:2px solid black;'/>
+      </div>
+    </div>
+    <section class='controls' style='text-align: center; margin-top: 20px;'>
+      <button onclick='speakWords(["red", "blue", "green", "black", "white", "orange", "yellow", "brown", "light", "dark", "six", "seven", "eight", "nine", "ten", "second", "minute", "hour", "week", "month"])'>Listen to Words</button>
+      <a href='pearl-test.html'><button>Start Test</button></a>
+    </section>
+  </main>
+  <script src='scripts.js'></script>
+  <script>
+    fetch('header.html')
+      .then(response => response.text())
+      .then(data => { document.getElementById('header-container').innerHTML = data; });
+  </script>
+</body>
+</html>

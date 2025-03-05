@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Register</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="header.css">
+</head>
+<body>
+  <!-- Shared header -->
+  <div id="header-container"></div>
+  
+  <main style="text-align: center;">
+    <h1>Register</h1>
+    <form id="register-form">
+      <label>Username: <input type="text" id="reg-username" required></label><br>
+      <label>Password: <input type="password" id="reg-password" required></label><br>
+      <button type="submit">Register</button>
+    </form>
+    <div id="reg-message"></div>
+    <p>Already have an account? <a href="login.html">Log In</a></p>
+  </main>
+
+  <script src="scripts.js"></script>
+  <script>
+    // Load header
+    fetch('header.html')
+      .then(response => response.text())
+      .then(data => { document.getElementById('header-container').innerHTML = data; });
+
+    // Registration form submission
+    document.getElementById('register-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const username = document.getElementById('reg-username').value.trim();
+      const password = document.getElementById('reg-password').value;
+      
+      // Get existing users from localStorage or initialize
+      let users = JSON.parse(localStorage.getItem('users')) || {};
+      if(users[username]){
+        document.getElementById('reg-message').innerText = "Username already exists!";
+      } else {
+        // For simplicity, we’re storing password in plain text here.
+        // In production, consider using a proper hashing function.
+        users[username] = { password: password, progress: {} };
+        localStorage.setItem('users', JSON.stringify(users));
+        document.getElementById('reg-message').innerText = "Registration successful! You can now log in.";
+      }
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,123 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>SyncRoot Test</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="header.css">
+</head>
+<body class="SyncRoot-level">
+  <!-- Shared header -->
+  <div id="header-container"></div>
+  
+  <header>
+    <h1 style="text-align: center;">SyncRoot Test</h1>
+  </header>
+  
+  <section id="test-area" style="text-align: center;">
+    <button id="start-btn" onclick="startTest()">Start Test</button>
+  </section>
+  
+  <section id="feedback" style="text-align: center; margin-top: 20px;"></section>
+  
+  <script src="scripts.js"></script>
+  <script>
+    // Load the shared header
+    fetch('header.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('header-container').innerHTML = data;
+      });
+
+    // Tangerine level words (from your JSON mapping)
+    const SyncRootWords = [{"name":"Golden","cssClass":"golden-level","pdfFile":"http://sapintranet.sap.local/Words/files/Golden_Level_Words.pdf","words":["a","and","be","I","in","is","it","of","that","the","to","was"]},{"name":"Red","cssClass":"red-level","pdfFile":"http://sapintranet.sap.local/Words/files/Red_Level_Words.pdf","words":["all","are","as","at","but","for","had","have","he","her","his","not","on","one","said","so","they","we","with","you"]},{"name":"Blue","cssClass":"blue-level","pdfFile":"http://sapintranet.sap.local/Words/files/Blue_Level_Words.pdf","words":["an","by","do","go","if","me","my","no","or","up"]},{"name":"Green","cssClass":"green-level","pdfFile":"http://sapintranet.sap.local/Words/files/Green_Level_Words.pdf","words":["big","can","did","get","has","him","new","now","off","old","our","out","see","she","two","who"]},{"name":"Orange","cssClass":"orange-level","pdfFile":"http://sapintranet.sap.local/Words/files/Orange_Level_Words.pdf","words":["back","been","came","down","from","into","just","like","made","much","over","them","this","well","went","when"]},{"name":"Indigo","cssClass":"indigo-level","pdfFile":"http://sapintranet.sap.local/Words/files/Indigo_Level_Words.pdf","words":["call","come","here","make","must","only","some","then","were","what","will","your"]},{"name":"Violet","cssClass":"violet-level","pdfFile":"http://sapintranet.sap.local/Words/files/Violet_Level_Words.pdf","words":["about","before","could","first","little","look","more","other","right","their","there","want","where","which"]},{"name":"Pink","cssClass":"pink-level","pdfFile":"http://sapintranet.sap.local/Words/files/Pink_Level_Words.pdf","words":["after","am","boy","day","eat","five","fly","girl","good","help","home","jump","play","ran","read","saw","sing","sit","think","us"]},{"name":"Purple","cssClass":"purple-level","pdfFile":"http://sapintranet.sap.local/Words/files/Purple_Level_Words.pdf","words":["again","ask","best","bring","far","find","give","how","kind","left","man","mother","own","room","say","stop","these","too","walk","wish"]},{"name":"Aqua","cssClass":"aqua-level","pdfFile":"http://sapintranet.sap.local/Words/files/Aqua_Level_Words.pdf","words":["always","away","bird","dog","fast","four","going","hand","keep","let","many","night","people","round","school","take","thing","tree","water","work"]},{"name":"Lime","cssClass":"lime-level","pdfFile":"http://sapintranet.sap.local/Words/files/Lime_Level_Words.pdf","words":["another","ate","bad","father","found","got","head","know","live","may","name","once","put","run","should","tell","three","under","would","write"]},{"name":"Lemon","cssClass":"lemon-level","pdfFile":"http://sapintranet.sap.local/Words/files/Lemon_Level_Words.pdf","words":["any","because","cat","each","every","gave","house","last","long","morning","open","small","soon","than","time","use","very","why","year","yes"]},{"name":"Pearl","cssClass":"pearl-level","pdfFile":"http://sapintranet.sap.local/Words/files/Pearl_Level_Words.pdf","words":["red","blue","green","black","white","orange","yellow","brown","light","dark","six","seven","eight","nine","ten","second","minute","hour","week","month"]},{"name":"Ruby","cssClass":"ruby-level","pdfFile":"http://sapintranet.sap.local/Words/files/Ruby_Level_Words.pdf","words":["mum","dad","baby","sister","brother","family","children","kids","men","women","parent","person","love","heart","friend","body","face","eye","leg","feet"]},{"name":"Sapphire","cssClass":"sapphire-level","pdfFile":"http://sapintranet.sap.local/Words/files/Sapphire_Level_Words.pdf","words":["sound","letter","word","sentence","line","book","story","picture","page","paper","front","start","end","hold","draw","class","study","learn","spell","list"]},{"name":"Jade","cssClass":"jade-level","pdfFile":"http://sapintranet.sap.local/Words/files/Jade_Level_Words.pdf","words":["space","earth","moon","sun","star","world","sea","land","ground","sky","plant","flower","grow","field","rain","wind","air","fire","hot","cold"]},{"name":"Amber","cssClass":"amber-level","pdfFile":"http://sapintranet.sap.local/Words/files/Amber_Level_Words.pdf","words":["fun","game","bike","ride","race","ball","happy","party","doll","toy","song","music","beautiful","together","watch","season","summer","autumn","winter","spring","each","chew","football","calm","knew","beach","today","join","clean","uncle","different","picnic","easy","float","write","birthday","try","please","asked","bread"]}];
+    let testWords = [];
+    let currentIndex = 0;
+    // This key will be used to store progress in localStorage (e.g., "orange_tangerine")
+    var currentTestLevel = "SyncRoot";
+    
+    function startTest() {
+      testWords = [];
+      let wordsCopy = [...tangerineWords];
+      while (testWords.length < 10 && wordsCopy.length > 0) {
+        let randomIndex = Math.floor(Math.random() * wordsCopy.length);
+        testWords.push(wordsCopy.splice(randomIndex, 1)[0]);
+      }
+      console.log("Test words selected:", testWords);
+      currentIndex = 0;
+      document.getElementById("feedback").innerHTML = "";
+      showCurrentWord();
+    }
+    
+    function showCurrentWord() {
+      const testArea = document.getElementById("test-area");
+      testArea.innerHTML = `
+        <h2>Word ${currentIndex + 1} of ${testWords.length}</h2>
+        <button onclick="playCurrentWord()">Play Word</button>
+        <div>
+          <input type="text" id="answer-input" placeholder="Type the word here...">
+        </div>
+        <button onclick="checkAnswer()">Submit Answer</button>
+      `;
+      document.getElementById("answer-input").addEventListener("keypress", function(e) {
+        if (e.key === 'Enter') {
+          e.preventDefault();
+          checkAnswer();
+        }
+      });
+      console.log("Presenting word:", testWords[currentIndex]);
+    }
+    
+    function playCurrentWord() {
+      const currentWord = testWords[currentIndex];
+      console.log("Playing word:", currentWord);
+      // Call the speakWords function if available, else alert the word.
+      if (typeof speakWords === "function") {
+        speakWords([currentWord]);
+      } else {
+        alert("speakWords not defined. The word is: " + currentWord);
+      }
+    }
+    
+    function checkAnswer() {
+      const input = document.getElementById("answer-input");
+      const userAnswer = input.value.trim().toLowerCase();
+      const correctAnswer = testWords[currentIndex].toLowerCase();
+      const feedbackEl = document.getElementById("feedback");
+      
+      console.log("User answer:", userAnswer, "| Correct answer:", correctAnswer);
+      
+      if (userAnswer === correctAnswer) {
+        input.classList.remove("incorrect");
+        input.classList.add("correct");
+        feedbackEl.innerHTML = "<p>Correct!</p>";
+        console.log("Answer correct for word index:", currentIndex);
+        currentIndex++;
+        if (currentIndex < testWords.length) {
+          setTimeout(() => { showCurrentWord(); }, 1000);
+        } else {
+          feedbackEl.innerHTML = "<p>Great job! You've mastered the Orange Level - Tangerine sub-level!</p><a href='index.html'><button>Return Home</button></a>";
+          document.getElementById("test-area").innerHTML = "";
+          // Save progress if a user is logged in
+          let currentUser = localStorage.getItem("currentUser");
+          if (currentUser) {
+            let users = JSON.parse(localStorage.getItem("users")) || {};
+            console.log("Before progress update, user data:", users[currentUser]);
+            users[currentUser].progress[currentTestLevel] = "completed";
+            localStorage.setItem("users", JSON.stringify(users));
+            console.log("Progress updated for", currentUser, ":", users[currentUser].progress);
+          } else {
+            console.log("No current user logged in; progress not saved.");
+          }
+        }
+      } else {
+        input.classList.remove("correct");
+        input.classList.add("incorrect");
+        feedbackEl.innerHTML = "<p>Incorrect, please try again!</p>";
+        console.log("Answer incorrect. Prompting to try again.");
+      }
+    }
+  </script>
+</body>
+</html>
+

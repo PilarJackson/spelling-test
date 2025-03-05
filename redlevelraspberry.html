@@ -1,0 +1,33 @@
+﻿<!DOCTYPE html>
+<html lang='en'>
+<head>
+  <meta charset='UTF-8'>
+  <title>Red Level - Raspberry - Review</title>
+  <link rel='stylesheet' href='styles.css'>
+  <link rel='stylesheet' href='header.css'>
+</head>
+<body class='raspberry-level'>
+  <div id='header-container'></div>
+  <main>
+    <h1 style='text-align: center;'>Red Level - Raspberry Level Words</h1>
+    <div style='display:flex; justify-content:center; align-items:flex-start; gap:20px; margin-top:20px;'>
+      <div class='word-list' style='flex:1; text-align:left;'>
+        <table style='margin-left:1cm; width:90%; border-collapse:collapse;'><tr><td style='padding:5px; border:1px solid #ddd; text-align:center;'>turn</td><td style='padding:5px; border:1px solid #ddd; text-align:center;'>young</td><td style='padding:5px; border:1px solid #ddd; text-align:center;'>church</td><td style='padding:5px; border:1px solid #ddd; text-align:center;'>above</td><td style='padding:5px; border:1px solid #ddd; text-align:center;'>circus</td></tr><tr><td style='padding:5px; border:1px solid #ddd; text-align:center;'>push</td><td style='padding:5px; border:1px solid #ddd; text-align:center;'>aunty</td><td style='padding:5px; border:1px solid #ddd; text-align:center;'>lady</td><td style='padding:5px; border:1px solid #ddd; text-align:center;'>asleep</td><td style='padding:5px; border:1px solid #ddd; text-align:center;'>concert</td></tr><tr><td style='padding:5px; border:1px solid #ddd; text-align:center;'>wrong</td><td style='padding:5px; border:1px solid #ddd; text-align:center;'>cousin</td><td style='padding:5px; border:1px solid #ddd; text-align:center;'>doctor</td><td style='padding:5px; border:1px solid #ddd; text-align:center;'>circle</td><td style='padding:5px; border:1px solid #ddd; text-align:center;'>great</td></tr><tr><td style='padding:5px; border:1px solid #ddd; text-align:center;'>roaring</td><td style='padding:5px; border:1px solid #ddd; text-align:center;'>chose</td><td style='padding:5px; border:1px solid #ddd; text-align:center;'>rather</td><td style='padding:5px; border:1px solid #ddd; text-align:center;'>piece</td><td style='padding:5px; border:1px solid #ddd; text-align:center;'>view</td></tr><tr></table>
+      </div>
+      <div class='image-container' style='flex:1; text-align:center; border:2px solid black; padding:5px;'>
+        <img src='http://sapintranet.sap.local/Words/files/Red_Level.png' alt='Level Image' style='max-width:400px; height:auto; border:2px solid black;'/>
+      </div>
+    </div>
+    <section class='controls' style='text-align: center; margin-top: 20px;'>
+      <button onclick='speakWords(["turn", "young", "church", "above", "circus", "push", "aunty", "lady", "asleep", "concert", "wrong", "cousin", "doctor", "circle", "great", "roaring", "chose", "rather", "piece", "view"])'>Listen to Words</button>
+      <a href='redlevelraspberry-test.html'><button>Start Test</button></a>
+    </section>
+  </main>
+  <script src='scripts.js'></script>
+  <script>
+    fetch('header.html')
+      .then(response => response.text())
+      .then(data => { document.getElementById('header-container').innerHTML = data; });
+  </script>
+</body>
+</html>

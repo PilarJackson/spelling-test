@@ -1,0 +1,33 @@
+﻿<!DOCTYPE html>
+<html lang='en'>
+<head>
+  <meta charset='UTF-8'>
+  <title>Purple Level - Lilac - Review</title>
+  <link rel='stylesheet' href='styles.css'>
+  <link rel='stylesheet' href='header.css'>
+</head>
+<body class='lilac-level'>
+  <div id='header-container'></div>
+  <main>
+    <h1 style='text-align: center;'>Purple Level - Lilac Level Words</h1>
+    <div style='display:flex; justify-content:center; align-items:flex-start; gap:20px; margin-top:20px;'>
+      <div class='word-list' style='flex:1; text-align:left;'>
+        <table style='margin-left:1cm; width:90%; border-collapse:collapse;'><tr><td style='padding:5px; border:1px solid #ddd; text-align:center;'>pocket</td><td style='padding:5px; border:1px solid #ddd; text-align:center;'>weight</td><td style='padding:5px; border:1px solid #ddd; text-align:center;'>discovery</td><td style='padding:5px; border:1px solid #ddd; text-align:center;'>cemetery</td><td style='padding:5px; border:1px solid #ddd; text-align:center;'>refuse</td></tr><tr><td style='padding:5px; border:1px solid #ddd; text-align:center;'>delicious</td><td style='padding:5px; border:1px solid #ddd; text-align:center;'>soldier</td><td style='padding:5px; border:1px solid #ddd; text-align:center;'>squashed</td><td style='padding:5px; border:1px solid #ddd; text-align:center;'>promptly</td><td style='padding:5px; border:1px solid #ddd; text-align:center;'>vacuum</td></tr><tr><td style='padding:5px; border:1px solid #ddd; text-align:center;'>realise</td><td style='padding:5px; border:1px solid #ddd; text-align:center;'>mountain</td><td style='padding:5px; border:1px solid #ddd; text-align:center;'>benefit</td><td style='padding:5px; border:1px solid #ddd; text-align:center;'>straight</td><td style='padding:5px; border:1px solid #ddd; text-align:center;'>counter</td></tr><tr><td style='padding:5px; border:1px solid #ddd; text-align:center;'>disagree</td><td style='padding:5px; border:1px solid #ddd; text-align:center;'>journey</td><td style='padding:5px; border:1px solid #ddd; text-align:center;'>neighbour</td><td style='padding:5px; border:1px solid #ddd; text-align:center;'>kitchen</td><td style='padding:5px; border:1px solid #ddd; text-align:center;'>repair</td></tr><tr></table>
+      </div>
+      <div class='image-container' style='flex:1; text-align:center; border:2px solid black; padding:5px;'>
+        <img src='http://sapintranet.sap.local/Words/files/Purple_Level.png' alt='Level Image' style='max-width:400px; height:auto; border:2px solid black;'/>
+      </div>
+    </div>
+    <section class='controls' style='text-align: center; margin-top: 20px;'>
+      <button onclick='speakWords(["pocket", "weight", "discovery", "cemetery", "refuse", "delicious", "soldier", "squashed", "promptly", "vacuum", "realise", "mountain", "benefit", "straight", "counter", "disagree", "journey", "neighbour", "kitchen", "repair"])'>Listen to Words</button>
+      <a href='purplelevellilac-test.html'><button>Start Test</button></a>
+    </section>
+  </main>
+  <script src='scripts.js'></script>
+  <script>
+    fetch('header.html')
+      .then(response => response.text())
+      .then(data => { document.getElementById('header-container').innerHTML = data; });
+  </script>
+</body>
+</html>

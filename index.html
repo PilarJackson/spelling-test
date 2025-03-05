@@ -1,81 +1,140 @@
-<!DOCTYPE html>
-<html>
+﻿<!DOCTYPE html>
+<html lang='en'>
 <head>
-  <meta charset="UTF-8">
-  <title>High Frequency Words Practice</title>
+  <meta charset='UTF-8'>
+  <title>High Frequency Words - Home</title>
+  <link rel='stylesheet' href='styles.css'>
+  <link rel='stylesheet' href='header.css'>
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 20px;
-    }
-    .hidden {
-      display: none;
-    }
-    label {
-      display: inline-block;
-      margin-bottom: 5px;
-    }
+    .box { border: 1px solid #ccc; border-radius: 5px; padding: 15px; margin: 20px auto; max-width: 600px; background-color: #f9f9f9; }
+    table.levels-table { margin: 20px auto; border-collapse: collapse; width: 80%; }
+    table.levels-table caption { font-weight: bold; margin-bottom: 10px; font-size: 1.1em; }
+    table.levels-table td { padding: 10px; text-align: center; border: 1px solid #ddd; }
+    table.levels-table a { text-decoration: none; font-weight: bold; }
   </style>
 </head>
 <body>
-  <h1>High Frequency Words Practice</h1>
-  <div id="levelInfo"></div>
-  <button id="playButton">Play Words</button>
-  <form id="testForm" class="hidden">
-    <div id="wordInputs"></div>
-    <br>
-    <button type="submit">Submit Answers</button>
-  </form>
-  <div id="result"></div>
-  <button id="nextLevelButton" class="hidden">Next Level</button>
-
+  <div id='header-container'></div>
+  <main style='text-align: center; padding: 20px;'>
+    <h1>High Frequency Words - Master Them All!</h1>
+    <p>Welcome to your interactive word learning website! Choose a sub-level below to begin learning and testing your high frequency words.</p>
+    <section>
+      <table class='levels-table'>
+        <caption>Levels (Easier to Harder)</caption>
+        <tr>          <td><a href='golden.html'>Golden</a></td>
+          <td><a href='red.html'>Red</a></td>
+          <td><a href='blue.html'>Blue</a></td>
+          <td><a href='green.html'>Green</a></td>
+        </tr>
+        <tr>
+          <td><a href='orange.html'>Orange</a></td>
+          <td><a href='indigo.html'>Indigo</a></td>
+          <td><a href='violet.html'>Violet</a></td>
+          <td><a href='pink.html'>Pink</a></td>
+        </tr>
+        <tr>
+          <td><a href='purple.html'>Purple</a></td>
+          <td><a href='aqua.html'>Aqua</a></td>
+          <td><a href='lime.html'>Lime</a></td>
+          <td><a href='lemon.html'>Lemon</a></td>
+        </tr>
+        <tr>
+          <td><a href='pearl.html'>Pearl</a></td>
+          <td><a href='ruby.html'>Ruby</a></td>
+          <td><a href='sapphire.html'>Sapphire</a></td>
+          <td><a href='jade.html'>Jade</a></td>
+        </tr>
+        <tr>
+          <td><a href='amber.html'>Amber</a></td>
+          <td><a href='redlevelraspberry.html'>Red Level - Raspberry</a></td>
+          <td><a href='redlevelrose.html'>Red Level - Rose</a></td>
+          <td><a href='redlevelscarlet.html'>Red Level - Scarlet</a></td>
+        </tr>
+        <tr>
+          <td><a href='redlevelcrimson.html'>Red Level - Crimson</a></td>
+          <td><a href='redlevelgarnet.html'>Red Level - Garnet</a></td>
+          <td><a href='orangelevelmarigold.html'>Orange Level - Marigold</a></td>
+          <td><a href='orangeleveltangerine.html'>Orange Level - Tangerine</a></td>
+        </tr>
+        <tr>
+          <td><a href='orangelevelapricot.html'>Orange Level - Apricot</a></td>
+          <td><a href='orangelevelmarmalade.html'>Orange Level - Marmalade</a></td>
+          <td><a href='orangelevelclay.html'>Orange Level - Clay</a></td>
+          <td><a href='greenlevelemerald.html'>Green Level - Emerald</a></td>
+        </tr>
+        <tr>
+          <td><a href='greenlevelolive.html'>Green Level - Olive</a></td>
+          <td><a href='greenlevelpeacock.html'>Green Level - Peacock</a></td>
+          <td><a href='greenlevelmint.html'>Green Level - Mint</a></td>
+          <td><a href='greenlevelteal.html'>Green Level - Teal</a></td>
+        </tr>
+        <tr>
+          <td><a href='bluelevelturquoise.html'>Blue Level - Turquoise</a></td>
+          <td><a href='bluelevelcobalt.html'>Blue Level - Cobalt</a></td>
+          <td><a href='blueleveldenim.html'>Blue Level - Denim</a></td>
+          <td><a href='blueleveltopaz.html'>Blue Level - Topaz</a></td>
+        </tr>
+        <tr>
+          <td><a href='bluelevelnavy.html'>Blue Level - Navy</a></td>
+          <td><a href='yellowlevelbuttercup.html'>Yellow Level - Buttercup</a></td>
+          <td><a href='yellowlevelbanana.html'>Yellow Level - Banana</a></td>
+          <td><a href='yellowlevelcanary.html'>Yellow Level - Canary</a></td>
+        </tr>
+        <tr>
+          <td><a href='yellowlevelmustard.html'>Yellow Level - Mustard</a></td>
+          <td><a href='yellowlevelgold.html'>Yellow Level - Gold</a></td>
+          <td><a href='purplelevellavender.html'>Purple Level - Lavender</a></td>
+          <td><a href='purplelevelamethyst.html'>Purple Level - Amethyst</a></td>
+        </tr>
+        <tr>
+          <td><a href='purplelevelmauve.html'>Purple Level - Mauve</a></td>
+          <td><a href='purplelevellilac.html'>Purple Level - Lilac</a></td>
+          <td><a href='purplelevelmagenta.html'>Purple Level - Magenta</a></td>
+          <td><a href='pinklevelflamingo.html'>Pink Level - Flamingo</a></td>
+        </tr>
+        <tr>
+          <td><a href='pinklevelwatermelon.html'>Pink Level - Watermelon</a></td>
+          <td><a href='pinklevelfuchsia.html'>Pink Level - Fuchsia</a></td>
+          <td><a href='pinklevelcranberry.html'>Pink Level - Cranberry</a></td>
+          <td><a href='pinklevelsalmon.html'>Pink Level - Salmon</a></td>
+        </tr>
+        <tr>
+          <td><a href='creamlevelvanilla.html'>Cream Level - Vanilla</a></td>
+          <td><a href='creamlevelbone.html'>Cream Level - Bone</a></td>
+          <td><a href='creamlevelbeige.html'>Cream Level - Beige</a></td>
+          <td><a href='creamlevelivory.html'>Cream Level - Ivory</a></td>
+        </tr>
+        <tr>
+          <td><a href='creamlevelsnow.html'>Cream Level - Snow</a></td>
+        </tr>
+      </table>
+    </section>
+    <div class='box'>
+      <h2>How It Works</h2>
+      <p>Each level/sub-level has two parts: a Review Page and a Test Page.</p>
+      <ol style='text-align: left; display: inline-block;'>
+        <li><strong>Review Page:</strong> Click the sub-level link to view all the words and see the image.</li>
+        <li><strong>Test Page:</strong> When ready, click 'Start Test' on the test page. You'll be presented one word at a time. Type what you hear and press Enter or click 'Submit Answer'. You must get all words correct to pass the sub-level.</li>
+      </ol>
+      <p>Your progress is saved automatically once you pass a sub-level.</p>
+    </div>
+    <div class='box'>
+      <h2>User Access</h2>
+      <p>To track your progress, please register and log in:</p>
+      <ul style='list-style: none; padding: 0;'>
+        <li><a href='register.html'>Register</a></li>
+        <li><a href='login.html'>Login</a></li>
+        <li><a href='dashboard.html'>Dashboard</a> â€“ View your progress</li>
+      </ul>
+    </div>
+  </main>
+  <footer style='text-align: center; padding: 20px;'>
+    <p>Have fun mastering your words and tracking your progress!</p>
+  </footer>
   <script>
-    // Define the levels using the words from your PDF.
-    // (Note: "Amber" level includes two blocks merged together.)
-    const levels = [
-      { name: "Golden", words: [ "a", "and", "be", "I", "in", "is", "it", "of", "that", "the", "to", "was" ] },
-      { name: "Red", words: [ "all", "are", "as", "at", "but", "for", "had", "have", "he", "her", "his", "not", "on", "one", "said", "so", "they", "we", "with", "you" ] },
-      { name: "Blue", words: [ "an", "by", "do", "go", "if", "me", "my", "no", "or", "up" ] },
-      { name: "Green", words: [ "big", "can", "did", "get", "has", "him", "new", "now", "off", "old", "our", "out", "see", "she", "two", "who" ] },
-      { name: "Orange", words: [ "back", "been", "came", "down", "from", "into", "just", "like", "made", "much", "over", "them", "this", "well", "went", "when" ] },
-      { name: "Indigo", words: [ "call", "come", "here", "make", "must", "only", "some", "then", "were", "what", "will", "your" ] },
-      { name: "Violet", words: [ "about", "before", "could", "first", "little", "look", "more", "other", "right", "their", "there", "want", "where", "which" ] },
-      { name: "Pink", words: [ "after", "am", "boy", "day", "eat", "five", "fly", "girl", "good", "help", "home", "jump", "play", "ran", "read", "saw", "sing", "sit", "think", "us" ] },
-      { name: "Purple", words: [ "again", "ask", "best", "bring", "far", "find", "give", "how", "kind", "left", "man", "mother", "own", "room", "say", "stop", "these", "too", "walk", "wish" ] },
-      { name: "Aqua", words: [ "always", "away", "bird", "dog", "fast", "four", "going", "hand", "keep", "let", "many", "night", "people", "round", "school", "take", "thing", "tree", "water", "work" ] },
-      { name: "Lime", words: [ "another", "ate", "bad", "father", "found", "got", "head", "know", "live", "may", "name", "once", "put", "run", "should", "tell", "three", "under", "would", "write" ] },
-      { name: "Lemon", words: [ "any", "because", "cat", "each", "every", "gave", "house", "last", "long", "morning", "open", "small", "soon", "than", "time", "use", "very", "why", "year", "yes" ] },
-      { name: "Pearl", words: [ "red", "blue", "green", "black", "white", "orange", "yellow", "brown", "light", "dark", "six", "seven", "eight", "nine", "ten", "second", "minute", "hour", "week", "month" ] },
-      { name: "Ruby", words: [ "mum", "dad", "baby", "sister", "brother", "family", "children", "kids", "men", "women", "parent", "person", "love", "heart", "friend", "body", "face", "eye", "leg", "feet" ] },
-      { name: "Sapphire", words: [ "sound", "letter", "word", "sentence", "line", "book", "story", "picture", "page", "paper", "front", "start", "end", "hold", "draw", "class", "study", "learn", "spell", "list" ] },
-      { name: "Jade", words: [ "space", "earth", "moon", "sun", "star", "world", "sea", "land", "ground", "sky", "plant", "flower", "grow", "field", "rain", "wind", "air", "fire", "hot", "cold" ] },
-      { name: "Amber", words: [ 
-          "fun", "game", "bike", "ride", "race", 
-          "ball", "happy", "party", "doll", "toy", 
-          "song", "music", "beautiful", "together", "watch", 
-          "season", "summer", "autumn", "winter", "spring",
-          "each", "chew", "football", "calm", "knew", 
-          "beach", "today", "join", "clean", "uncle", 
-          "different", "picnic", "easy", "float", "write", 
-          "birthday", "try", "please", "asked", "bread" 
-        ] 
-      },
-      { name: "Raspberry", words: [ "turn", "young", "church", "above", "circus", "push", "aunty", "lady", "asleep", "concert", "wrong", "cousin", "doctor", "circle", "great", "roaring", "chose", "rather", "piece", "view" ] },
-      { name: "Rose", words: [ "although", "tiny", "road", "already", "tomorrow", "towards", "often", "pretty", "garden", "sauce", "toilet", "engine", "among", "yesterday", "island", "serve", "weekend", "area", "used", "myself" ] },
-      { name: "Scarlet", words: [ "early", "animal", "drink", "feature", "movie", "outside", "busy", "pair", "even", "chair", "lovely", "idea", "grass", "path", "warm", "creature", "alive", "won", "hair", "train" ] },
-      { name: "Crimson", words: [ "hospital", "whole", "bottom", "quite", "wait", "never", "better", "holiday", "until", "lunch", "opened", "edge", "through", "fight", "hurt", "getting", "tonight", "measure", "chicken", "happened" ] },
-      { name: "Garnet", words: [ "funny", "blend", "carry", "rural", "cut", "done", "fall", "herself", "scary", "pick", "knight", "full", "rent", "almost", "bake", "bend", "beat", "bliss", "cap", "case" ] },
-      { name: "Marigold", words: [ "awake", "beans", "beside", "bill", "button", "chin", "count", "desk", "dry", "dust", "feather", "grew", "hall", "hidden", "kiss", "peas", "carrot", "pond", "press", "yummy" ] },
-      { name: "Tangerine", words: [ "bowl", "brave", "brick", "bug", "care", "cover", "creek", "else", "fur", "hung", "lake", "pale", "row", "save", "shine", "silver", "wool", "sour", "kiosk", "infect" ] },
-      { name: "Apricot", words: [ "clap", "pumpkin", "shook", "soup", "suppose", "tooth", "trade", "bitter", "swap", "hollow", "sign", "pedal", "instruct", "fright", "iron", "govern", "crawl", "blown", "raise", "prince" ] },
-      { name: "Marmalade", words: [ "numeral", "opinion", "region", "produce", "avoid", "original", "root", "admire", "myth", "groan", "petal", "missed", "accept", "align", "arena", "proceed", "accent", "adjust", "inhale", "volume" ] },
-      { name: "Clay", words: [ "plastic", "believe", "ballet", "finished", "country", "colourful", "against", "nobody", "lucky", "rocket", "strange", "wasn’t", "breakfast", "everyone", "arrived", "chasing", "follow", "across", "mistake", "knife" ] },
-      { name: "Emerald", words: [ "leave", "teacher", "dollars", "bridge", "goes", "excited", "cruel", "cricket", "city", "chapter", "reach", "cycle", "huge", "cents", "recess", "century", "decided", "rainbow", "length", "whistle" ] },
-      { name: "Olive", words: [ "freeze", "guess", "afraid", "poor", "does", "nothing", "presents", "dinner", "lonely", "contain", "twenty", "snatch", "guard", "ghost", "purple", "clothes", "Christmas", "enough", "slowly", "station" ] },
-      { name: "Peacock", words: [ "apple", "thief", "hundred", "listen", "Easter", "while", "tired", "money", "paddle", "square", "wheel", "diary", "hammer", "orange", "waste", "answer", "whale", "noise", "monkeys", "straw" ] },
-      { name: "Mint", words: [ "taste", "swimming", "juice", "fruit", "remember", "simple", "choice", "public", "lose", "rough", "photograph", "couldn’t", "cloud", "important", "laugh", "either", "switch", "entrance", "probably", "mirror" ] },
-      { name: "Teal", words: [ "television", "surprise", "anything", "finally", "favourite", "bought", "pattern", "special", "window", "vegetable", "blood", "especially", "terrible", "everything", "lightning", "electric", "weather", "Australia", "dream", "dancing" ] },
-      { name: "Turquoise", words: [ "oxygen", "machine", "during", "diamond", "cupboard", "thought", "themselves", "climbed", "you’re", "loose", "muscle", "direction", "shoulder", "reason", "yourself", "battery", "planet", "everywhere", "scared", "eleven" ] },
-      { name: "Cobalt", words: [ "stretch", "potatoes", "problem", "enormous", "radio", "describe", "chance", "woman", "continue", "solution", "someone", "middle", "magician", "angels", "understand", "library", "aloud", "pull", "Canberra", "weird" ] },
-      { name: "Denim", words: [ "pillow", "hidden", "bouquet", "nephew", "exercise", "several", "since", "cheaper", "umbrella", "distance", "dreadful", "museum", "appear", "whisper", "instrument", "pyjamas", "nervous", "honest", "information", "trouble" ] },
-      { name: "Topaz", words: [ "husband", "interview", "dangerous", "cough", "grown", "wonderful", "haunted", "rhythm", "death", "millions", "popular", "sandwich", "blanket", "
+    fetch('header.html')
+      .then(response => response.text())
+      .then(data => { document.getElementById('header-container').innerHTML = data; });
+  </script>
+</body>
+</html>

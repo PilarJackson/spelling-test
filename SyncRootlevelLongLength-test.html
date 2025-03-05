@@ -1,0 +1,123 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>SyncRoot Level - LongLength Test</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="header.css">
+</head>
+<body class="LongLength-level">
+  <!-- Shared header -->
+  <div id="header-container"></div>
+  
+  <header>
+    <h1 style="text-align: center;">SyncRoot Level - LongLength Test</h1>
+  </header>
+  
+  <section id="test-area" style="text-align: center;">
+    <button id="start-btn" onclick="startTest()">Start Test</button>
+  </section>
+  
+  <section id="feedback" style="text-align: center; margin-top: 20px;"></section>
+  
+  <script src="scripts.js"></script>
+  <script>
+    // Load the shared header
+    fetch('header.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('header-container').innerHTML = data;
+      });
+
+    // Tangerine level words (from your JSON mapping)
+    const LongLengthWords = 8;
+    let testWords = [];
+    let currentIndex = 0;
+    // This key will be used to store progress in localStorage (e.g., "orange_tangerine")
+    var currentTestLevel = "SyncRoot_LongLength";
+    
+    function startTest() {
+      testWords = [];
+      let wordsCopy = [...tangerineWords];
+      while (testWords.length < 10 && wordsCopy.length > 0) {
+        let randomIndex = Math.floor(Math.random() * wordsCopy.length);
+        testWords.push(wordsCopy.splice(randomIndex, 1)[0]);
+      }
+      console.log("Test words selected:", testWords);
+      currentIndex = 0;
+      document.getElementById("feedback").innerHTML = "";
+      showCurrentWord();
+    }
+    
+    function showCurrentWord() {
+      const testArea = document.getElementById("test-area");
+      testArea.innerHTML = `
+        <h2>Word ${currentIndex + 1} of ${testWords.length}</h2>
+        <button onclick="playCurrentWord()">Play Word</button>
+        <div>
+          <input type="text" id="answer-input" placeholder="Type the word here...">
+        </div>
+        <button onclick="checkAnswer()">Submit Answer</button>
+      `;
+      document.getElementById("answer-input").addEventListener("keypress", function(e) {
+        if (e.key === 'Enter') {
+          e.preventDefault();
+          checkAnswer();
+        }
+      });
+      console.log("Presenting word:", testWords[currentIndex]);
+    }
+    
+    function playCurrentWord() {
+      const currentWord = testWords[currentIndex];
+      console.log("Playing word:", currentWord);
+      // Call the speakWords function if available, else alert the word.
+      if (typeof speakWords === "function") {
+        speakWords([currentWord]);
+      } else {
+        alert("speakWords not defined. The word is: " + currentWord);
+      }
+    }
+    
+    function checkAnswer() {
+      const input = document.getElementById("answer-input");
+      const userAnswer = input.value.trim().toLowerCase();
+      const correctAnswer = testWords[currentIndex].toLowerCase();
+      const feedbackEl = document.getElementById("feedback");
+      
+      console.log("User answer:", userAnswer, "| Correct answer:", correctAnswer);
+      
+      if (userAnswer === correctAnswer) {
+        input.classList.remove("incorrect");
+        input.classList.add("correct");
+        feedbackEl.innerHTML = "<p>Correct!</p>";
+        console.log("Answer correct for word index:", currentIndex);
+        currentIndex++;
+        if (currentIndex < testWords.length) {
+          setTimeout(() => { showCurrentWord(); }, 1000);
+        } else {
+          feedbackEl.innerHTML = "<p>Great job! You've mastered the Orange Level - Tangerine sub-level!</p><a href='index.html'><button>Return Home</button></a>";
+          document.getElementById("test-area").innerHTML = "";
+          // Save progress if a user is logged in
+          let currentUser = localStorage.getItem("currentUser");
+          if (currentUser) {
+            let users = JSON.parse(localStorage.getItem("users")) || {};
+            console.log("Before progress update, user data:", users[currentUser]);
+            users[currentUser].progress[currentTestLevel] = "completed";
+            localStorage.setItem("users", JSON.stringify(users));
+            console.log("Progress updated for", currentUser, ":", users[currentUser].progress);
+          } else {
+            console.log("No current user logged in; progress not saved.");
+          }
+        }
+      } else {
+        input.classList.remove("correct");
+        input.classList.add("incorrect");
+        feedbackEl.innerHTML = "<p>Incorrect, please try again!</p>";
+        console.log("Answer incorrect. Prompting to try again.");
+      }
+    }
+  </script>
+</body>
+</html>
+

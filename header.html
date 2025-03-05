@@ -1,0 +1,123 @@
+﻿<!DOCTYPE html>
+<html lang='en'>
+<head>
+  <meta charset='UTF-8'>
+  <title>Site Header</title>
+  <style>
+    body, ul, li, a { margin: 0; padding: 0; list-style: none; text-decoration: none; }
+    .header-container { display: flex; align-items: center; justify-content: space-between; background-color: #333; padding: 10px 20px; color: #fff; font-family: Arial, sans-serif; }
+    .header-title h1 { font-size: 2.5em; margin: 0; }
+    .header-title h3 { margin: 0; font-weight: normal; font-size: 1.2em; }
+    .nav-menu { display: flex; align-items: center; }
+    .nav-menu > li { position: relative; padding: 10px 15px; }
+    .nav-menu > li > a { color: #fff; font-weight: bold; }
+    .dropdown-content, .dropdown-submenu { display: none; position: absolute; background-color: #444; min-width: 180px; z-index: 1; }
+    .dropdown-content li, .dropdown-submenu li { padding: 10px; }
+    .dropdown-content li a, .dropdown-submenu li a { color: #fff; }
+    .nav-menu li:hover > .dropdown-content { display: block; }
+    .dropdown-content li:hover > .dropdown-submenu { display: block; left: 180px; top: 0; }
+    .nav-menu li:hover, .dropdown-content li:hover, .dropdown-submenu li:hover { background-color: #555; }
+  </style>
+</head>
+<body>
+  <header>
+    <div class='header-container'>
+      <div class='header-title'>
+        <h1>High Frequency Words</h1>
+        <h3>Master Them All!</h3>
+      </div>
+      <nav>
+        <ul class='nav-menu'>
+          <li><a href='index.html'>Home</a></li>
+          <li class='dropdown'><a href='#'>Easy Levels</a>
+            <ul class='dropdown-content'>              <li><a href='golden.html'>Golden Level</a></li>
+              <li><a href='red.html'>Red Level</a></li>
+              <li><a href='blue.html'>Blue Level</a></li>
+              <li><a href='green.html'>Green Level</a></li>
+              <li><a href='orange.html'>Orange Level</a></li>
+              <li><a href='indigo.html'>Indigo Level</a></li>
+              <li><a href='violet.html'>Violet Level</a></li>
+              <li><a href='pink.html'>Pink Level</a></li>
+              <li><a href='purple.html'>Purple Level</a></li>
+              <li><a href='aqua.html'>Aqua Level</a></li>
+              <li><a href='lime.html'>Lime Level</a></li>
+              <li><a href='lemon.html'>Lemon Level</a></li>
+              <li><a href='pearl.html'>Pearl Level</a></li>
+              <li><a href='ruby.html'>Ruby Level</a></li>
+              <li><a href='sapphire.html'>Sapphire Level</a></li>
+              <li><a href='jade.html'>Jade Level</a></li>
+              <li><a href='amber.html'>Amber Level</a></li>
+            </ul>
+          </li>
+          <li class='dropdown'><a href='#'>Advanced Levels</a>
+            <ul class='dropdown-content'>              <li><a href='#' style='font-weight:bold;'>Red Level</a><ul class='dropdown-submenu'>
+                <li><a href='redlevelraspberry.html'>Red Level - Raspberry</a></li>
+                <li><a href='redlevelrose.html'>Red Level - Rose</a></li>
+                <li><a href='redlevelscarlet.html'>Red Level - Scarlet</a></li>
+                <li><a href='redlevelcrimson.html'>Red Level - Crimson</a></li>
+                <li><a href='redlevelgarnet.html'>Red Level - Garnet</a></li>
+              </ul></li>
+              <li><a href='#' style='font-weight:bold;'>Orange Level</a><ul class='dropdown-submenu'>
+                <li><a href='orangelevelmarigold.html'>Orange Level - Marigold</a></li>
+                <li><a href='orangeleveltangerine.html'>Orange Level - Tangerine</a></li>
+                <li><a href='orangelevelapricot.html'>Orange Level - Apricot</a></li>
+                <li><a href='orangelevelmarmalade.html'>Orange Level - Marmalade</a></li>
+                <li><a href='orangelevelclay.html'>Orange Level - Clay</a></li>
+              </ul></li>
+              <li><a href='#' style='font-weight:bold;'>Green Level</a><ul class='dropdown-submenu'>
+                <li><a href='greenlevelemerald.html'>Green Level - Emerald</a></li>
+                <li><a href='greenlevelolive.html'>Green Level - Olive</a></li>
+                <li><a href='greenlevelpeacock.html'>Green Level - Peacock</a></li>
+                <li><a href='greenlevelmint.html'>Green Level - Mint</a></li>
+                <li><a href='greenlevelteal.html'>Green Level - Teal</a></li>
+              </ul></li>
+              <li><a href='#' style='font-weight:bold;'>Blue Level</a><ul class='dropdown-submenu'>
+                <li><a href='bluelevelturquoise.html'>Blue Level - Turquoise</a></li>
+                <li><a href='bluelevelcobalt.html'>Blue Level - Cobalt</a></li>
+                <li><a href='blueleveldenim.html'>Blue Level - Denim</a></li>
+                <li><a href='blueleveltopaz.html'>Blue Level - Topaz</a></li>
+                <li><a href='bluelevelnavy.html'>Blue Level - Navy</a></li>
+              </ul></li>
+              <li><a href='#' style='font-weight:bold;'>Yellow Level</a><ul class='dropdown-submenu'>
+                <li><a href='yellowlevelbuttercup.html'>Yellow Level - Buttercup</a></li>
+                <li><a href='yellowlevelbanana.html'>Yellow Level - Banana</a></li>
+                <li><a href='yellowlevelcanary.html'>Yellow Level - Canary</a></li>
+                <li><a href='yellowlevelmustard.html'>Yellow Level - Mustard</a></li>
+                <li><a href='yellowlevelgold.html'>Yellow Level - Gold</a></li>
+              </ul></li>
+              <li><a href='#' style='font-weight:bold;'>Purple Level</a><ul class='dropdown-submenu'>
+                <li><a href='purplelevellavender.html'>Purple Level - Lavender</a></li>
+                <li><a href='purplelevelamethyst.html'>Purple Level - Amethyst</a></li>
+                <li><a href='purplelevelmauve.html'>Purple Level - Mauve</a></li>
+                <li><a href='purplelevellilac.html'>Purple Level - Lilac</a></li>
+                <li><a href='purplelevelmagenta.html'>Purple Level - Magenta</a></li>
+              </ul></li>
+              <li><a href='#' style='font-weight:bold;'>Pink Level</a><ul class='dropdown-submenu'>
+                <li><a href='pinklevelflamingo.html'>Pink Level - Flamingo</a></li>
+                <li><a href='pinklevelwatermelon.html'>Pink Level - Watermelon</a></li>
+                <li><a href='pinklevelfuchsia.html'>Pink Level - Fuchsia</a></li>
+                <li><a href='pinklevelcranberry.html'>Pink Level - Cranberry</a></li>
+                <li><a href='pinklevelsalmon.html'>Pink Level - Salmon</a></li>
+              </ul></li>
+              <li><a href='#' style='font-weight:bold;'>Cream Level</a><ul class='dropdown-submenu'>
+                <li><a href='creamlevelvanilla.html'>Cream Level - Vanilla</a></li>
+                <li><a href='creamlevelbone.html'>Cream Level - Bone</a></li>
+                <li><a href='creamlevelbeige.html'>Cream Level - Beige</a></li>
+                <li><a href='creamlevelivory.html'>Cream Level - Ivory</a></li>
+                <li><a href='creamlevelsnow.html'>Cream Level - Snow</a></li>
+              </ul></li>
+            </ul>
+          </li>
+          <li class='dropdown'><a href='#'>User_Login</a>
+            <ul class='dropdown-content'>
+              <li><a href='register.html'>Register</a></li>
+              <li><a href='login.html'>Login</a></li>
+              <li><a href='dashboard.html'>Dashboard</a></li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+</body>
+</html>

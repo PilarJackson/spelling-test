@@ -1,0 +1,33 @@
+﻿<!DOCTYPE html>
+<html lang='en'>
+<head>
+  <meta charset='UTF-8'>
+  <title>Sapphire - Review</title>
+  <link rel='stylesheet' href='styles.css'>
+  <link rel='stylesheet' href='header.css'>
+</head>
+<body class='sapphire-level'>
+  <div id='header-container'></div>
+  <main>
+    <h1 style='text-align: center;'>Sapphire Level Words</h1>
+    <div style='display:flex; justify-content:center; align-items:flex-start; gap:20px; margin-top:20px;'>
+      <div class='word-list' style='flex:1; text-align:left;'>
+        <table style='margin-left:1cm; width:90%; border-collapse:collapse;'><tr><td style='padding:5px; border:1px solid #ddd; text-align:center;'>sound</td><td style='padding:5px; border:1px solid #ddd; text-align:center;'>letter</td><td style='padding:5px; border:1px solid #ddd; text-align:center;'>word</td><td style='padding:5px; border:1px solid #ddd; text-align:center;'>sentence</td><td style='padding:5px; border:1px solid #ddd; text-align:center;'>line</td></tr><tr><td style='padding:5px; border:1px solid #ddd; text-align:center;'>book</td><td style='padding:5px; border:1px solid #ddd; text-align:center;'>story</td><td style='padding:5px; border:1px solid #ddd; text-align:center;'>picture</td><td style='padding:5px; border:1px solid #ddd; text-align:center;'>page</td><td style='padding:5px; border:1px solid #ddd; text-align:center;'>paper</td></tr><tr><td style='padding:5px; border:1px solid #ddd; text-align:center;'>front</td><td style='padding:5px; border:1px solid #ddd; text-align:center;'>start</td><td style='padding:5px; border:1px solid #ddd; text-align:center;'>end</td><td style='padding:5px; border:1px solid #ddd; text-align:center;'>hold</td><td style='padding:5px; border:1px solid #ddd; text-align:center;'>draw</td></tr><tr><td style='padding:5px; border:1px solid #ddd; text-align:center;'>class</td><td style='padding:5px; border:1px solid #ddd; text-align:center;'>study</td><td style='padding:5px; border:1px solid #ddd; text-align:center;'>learn</td><td style='padding:5px; border:1px solid #ddd; text-align:center;'>spell</td><td style='padding:5px; border:1px solid #ddd; text-align:center;'>list</td></tr><tr></table>
+      </div>
+      <div class='image-container' style='flex:1; text-align:center; border:2px solid black; padding:5px;'>
+        <img src='http://sapintranet.sap.local/Words/files/Sapphire_Level_Words.png' alt='Level Image' style='max-width:400px; height:auto; border:2px solid black;'/>
+      </div>
+    </div>
+    <section class='controls' style='text-align: center; margin-top: 20px;'>
+      <button onclick='speakWords(["sound", "letter", "word", "sentence", "line", "book", "story", "picture", "page", "paper", "front", "start", "end", "hold", "draw", "class", "study", "learn", "spell", "list"])'>Listen to Words</button>
+      <a href='sapphire-test.html'><button>Start Test</button></a>
+    </section>
+  </main>
+  <script src='scripts.js'></script>
+  <script>
+    fetch('header.html')
+      .then(response => response.text())
+      .then(data => { document.getElementById('header-container').innerHTML = data; });
+  </script>
+</body>
+</html>

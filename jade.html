@@ -1,0 +1,33 @@
+﻿<!DOCTYPE html>
+<html lang='en'>
+<head>
+  <meta charset='UTF-8'>
+  <title>Jade - Review</title>
+  <link rel='stylesheet' href='styles.css'>
+  <link rel='stylesheet' href='header.css'>
+</head>
+<body class='jade-level'>
+  <div id='header-container'></div>
+  <main>
+    <h1 style='text-align: center;'>Jade Level Words</h1>
+    <div style='display:flex; justify-content:center; align-items:flex-start; gap:20px; margin-top:20px;'>
+      <div class='word-list' style='flex:1; text-align:left;'>
+        <table style='margin-left:1cm; width:90%; border-collapse:collapse;'><tr><td style='padding:5px; border:1px solid #ddd; text-align:center;'>space</td><td style='padding:5px; border:1px solid #ddd; text-align:center;'>earth</td><td style='padding:5px; border:1px solid #ddd; text-align:center;'>moon</td><td style='padding:5px; border:1px solid #ddd; text-align:center;'>sun</td><td style='padding:5px; border:1px solid #ddd; text-align:center;'>star</td></tr><tr><td style='padding:5px; border:1px solid #ddd; text-align:center;'>world</td><td style='padding:5px; border:1px solid #ddd; text-align:center;'>sea</td><td style='padding:5px; border:1px solid #ddd; text-align:center;'>land</td><td style='padding:5px; border:1px solid #ddd; text-align:center;'>ground</td><td style='padding:5px; border:1px solid #ddd; text-align:center;'>sky</td></tr><tr><td style='padding:5px; border:1px solid #ddd; text-align:center;'>plant</td><td style='padding:5px; border:1px solid #ddd; text-align:center;'>flower</td><td style='padding:5px; border:1px solid #ddd; text-align:center;'>grow</td><td style='padding:5px; border:1px solid #ddd; text-align:center;'>field</td><td style='padding:5px; border:1px solid #ddd; text-align:center;'>rain</td></tr><tr><td style='padding:5px; border:1px solid #ddd; text-align:center;'>wind</td><td style='padding:5px; border:1px solid #ddd; text-align:center;'>air</td><td style='padding:5px; border:1px solid #ddd; text-align:center;'>fire</td><td style='padding:5px; border:1px solid #ddd; text-align:center;'>hot</td><td style='padding:5px; border:1px solid #ddd; text-align:center;'>cold</td></tr><tr></table>
+      </div>
+      <div class='image-container' style='flex:1; text-align:center; border:2px solid black; padding:5px;'>
+        <img src='http://sapintranet.sap.local/Words/files/Jade_Level_Words.png' alt='Level Image' style='max-width:400px; height:auto; border:2px solid black;'/>
+      </div>
+    </div>
+    <section class='controls' style='text-align: center; margin-top: 20px;'>
+      <button onclick='speakWords(["space", "earth", "moon", "sun", "star", "world", "sea", "land", "ground", "sky", "plant", "flower", "grow", "field", "rain", "wind", "air", "fire", "hot", "cold"])'>Listen to Words</button>
+      <a href='jade-test.html'><button>Start Test</button></a>
+    </section>
+  </main>
+  <script src='scripts.js'></script>
+  <script>
+    fetch('header.html')
+      .then(response => response.text())
+      .then(data => { document.getElementById('header-container').innerHTML = data; });
+  </script>
+</body>
+</html>

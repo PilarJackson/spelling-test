@@ -1,0 +1,33 @@
+﻿<!DOCTYPE html>
+<html lang='en'>
+<head>
+  <meta charset='UTF-8'>
+  <title>Orange Level - Tangerine - Review</title>
+  <link rel='stylesheet' href='styles.css'>
+  <link rel='stylesheet' href='header.css'>
+</head>
+<body class='tangerine-level'>
+  <div id='header-container'></div>
+  <main>
+    <h1 style='text-align: center;'>Orange Level - Tangerine Level Words</h1>
+    <div style='display:flex; justify-content:center; align-items:flex-start; gap:20px; margin-top:20px;'>
+      <div class='word-list' style='flex:1; text-align:left;'>
+        <table style='margin-left:1cm; width:90%; border-collapse:collapse;'><tr><td style='padding:5px; border:1px solid #ddd; text-align:center;'>bowl</td><td style='padding:5px; border:1px solid #ddd; text-align:center;'>brave</td><td style='padding:5px; border:1px solid #ddd; text-align:center;'>brick</td><td style='padding:5px; border:1px solid #ddd; text-align:center;'>bug</td><td style='padding:5px; border:1px solid #ddd; text-align:center;'>care</td></tr><tr><td style='padding:5px; border:1px solid #ddd; text-align:center;'>cover</td><td style='padding:5px; border:1px solid #ddd; text-align:center;'>creek</td><td style='padding:5px; border:1px solid #ddd; text-align:center;'>else</td><td style='padding:5px; border:1px solid #ddd; text-align:center;'>fur</td><td style='padding:5px; border:1px solid #ddd; text-align:center;'>hung</td></tr><tr><td style='padding:5px; border:1px solid #ddd; text-align:center;'>lake</td><td style='padding:5px; border:1px solid #ddd; text-align:center;'>pale</td><td style='padding:5px; border:1px solid #ddd; text-align:center;'>row</td><td style='padding:5px; border:1px solid #ddd; text-align:center;'>save</td><td style='padding:5px; border:1px solid #ddd; text-align:center;'>shine</td></tr><tr><td style='padding:5px; border:1px solid #ddd; text-align:center;'>silver</td><td style='padding:5px; border:1px solid #ddd; text-align:center;'>wool</td><td style='padding:5px; border:1px solid #ddd; text-align:center;'>sour</td><td style='padding:5px; border:1px solid #ddd; text-align:center;'>kiosk</td><td style='padding:5px; border:1px solid #ddd; text-align:center;'>infect</td></tr><tr></table>
+      </div>
+      <div class='image-container' style='flex:1; text-align:center; border:2px solid black; padding:5px;'>
+        <img src='http://sapintranet.sap.local/Words/files/Orange_Level.png' alt='Level Image' style='max-width:400px; height:auto; border:2px solid black;'/>
+      </div>
+    </div>
+    <section class='controls' style='text-align: center; margin-top: 20px;'>
+      <button onclick='speakWords(["bowl", "brave", "brick", "bug", "care", "cover", "creek", "else", "fur", "hung", "lake", "pale", "row", "save", "shine", "silver", "wool", "sour", "kiosk", "infect"])'>Listen to Words</button>
+      <a href='orangeleveltangerine-test.html'><button>Start Test</button></a>
+    </section>
+  </main>
+  <script src='scripts.js'></script>
+  <script>
+    fetch('header.html')
+      .then(response => response.text())
+      .then(data => { document.getElementById('header-container').innerHTML = data; });
+  </script>
+</body>
+</html>
